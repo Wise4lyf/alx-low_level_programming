@@ -1,13 +1,18 @@
+#include <unistd.h>
 #include <stdio.h>
 /**
- *main-program entry point.
- *Return:0 if no errors, non zero if errors
+ *main - Entry point
+ *Description: prints lowercase alphabets in reverse
+ *Return: Always 0 (success)
  */
 int main(void)
+{
+ int a;
+ 
+ for (a = 'z'; a >= 'a'; a--)
  {
-  char i;
-  for (i = 'z'; i >= 'a'; i--)
-  putchar(i);
-  putchar('\n');
-  return (0);
+  putchar(a);
  }
+ putchar('\n');
+ return (0);
+}
