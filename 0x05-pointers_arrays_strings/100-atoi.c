@@ -1,35 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-/**
- *main - program that generates random valid
- *passwords for the program 101-crackme
- *
- *Return: 0 (Success)
- */
-int main(void)
-{
-int sum = 2772;
-int n;
+#include "main.h"
 
-  srand(time(0));
-  while (sum)
-  {
-   n = rand() % 100;
-   if (n <= 94)
-    n += 32;
-   else
-    continue;
-   if (sum - n == 0)
-   {
-    sum -= n;
-    printf("%c", n);
-   }
-    else if (sum - n - 32 > 0)
-   {
-    sum -= n;
-    printf("%c);
-   } 
-  }
-  return (0);
- }
+/**
+ *  * _atoi - function converts string to an integer
+ *   * @s: Pointer parameter
+ *    * Return: returns an integer value
+ *     */
+int _atoi(char *s)
+{
+		unsigned int count = 0, size = 0, j = 0, k = 1, m = 1, i;
+
+			while (*(s + count) != '\0')
+					{
+								if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
+												break;
+
+										if (*(s + count) == '-')
+														k *= -1;
+
+												if ((*(s + count) >= '0') && (*(s + count) <= '9'))
+															{
+																			if (size > 0)
+																								m *= 10;
+																						size++;
+																								}
+														count++;
+															}
+
+				for (i = count - size; i < count; i++)
+						{
+									j = j + ((*(s + i) - 48) * m);
+											m /= 10;
+												}
+					return (j * k);
+}
