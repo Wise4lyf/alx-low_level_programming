@@ -26,10 +26,10 @@ int n;
     printf("%c", n);
    }
     else if (sum - n - 32 > 0)
-    {
-     sum -= n;
-     printf("%c);
-    }
-   }
-   return (0);
+   {
+    sum -= n;
+    printf("%c);
+   } 
   }
+  return (0);
+ }
